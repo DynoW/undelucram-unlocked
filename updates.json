@@ -5,6 +5,10 @@
         {
           "version": "0.1.0",
           "update_link": "https://github.com/DynoW/undelucram-unlocked/releases/latest/download/undelucram-unlocked.xpi"
+        },
+        {
+          "version": "0.1.2",
+          "update_link": "https://github.com/DynoW/undelucram-unlocked/releases/latest/download/undelucram-unlocked.xpi"
         }
       ]
     }
