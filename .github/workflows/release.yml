@@ -48,8 +48,8 @@ jobs:
     runs-on: ubuntu-latest
     env:
       ADDON_ID: undelucram-unlocked@dynow.github.io
-      XPI: undelucram-unlocked.xpi
-      ZIP: undelucram-unlocked.zip
+      ZIP_ASSET: undelucram-unlocked.zip
+      XPI_ASSET: undelucram-unlocked.xpi
     steps:
       - name: Checkout
         uses: actions/checkout@v5
@@ -67,7 +67,10 @@ jobs:
           cp -r manifest.json rules src icons stage/
 
       - name: Build Chrome zip
-        run: (cd stage && zip -r "../$ZIP" .)
+        run: |
+          cp -r stage stage-chrome
+          jq 'del(.browser_specific_settings)' stage/manifest.json > stage-chrome/manifest.json
+          (cd stage-chrome && zip -r "../$ZIP_ASSET" .)
 
       - name: Sign Firefox add-on (AMO unlisted)
         env:
@@ -78,17 +81,31 @@ jobs:
             --source-dir stage \
             --channel unlisted \
             --artifacts-dir artifacts
-          cp "$(find artifacts -name '*.xpi' | head -n1)" "$XPI"
+          cp "$(find artifacts -name '*.xpi' | head -n1)" "$XPI_ASSET"
 
       - name: Create GitHub Release
         env:
           GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ needs.version.outputs.version }}
         run: |
-          gh release create "v${{ needs.version.outputs.version }}" \
-            "$ZIP" "$XPI" \
-            --target "$GITHUB_SHA" \
-            --title "Undelucram Unlocked ${{ needs.version.outputs.version }}" \
-            --generate-notes
+          for f in "$ZIP_ASSET" "$XPI_ASSET"; do
+            [ -f "$f" ] || { echo "::error::Missing build artifact: $f"; exit 1; }
+          done
+          body=$(cat <<'EOF'
+          ## Install
+          - **Firefox:** download `undelucram-unlocked.xpi`, then drag it into Firefox and confirm the install. Auto-updates via `updates.json`.
+          - **Chrome / Edge / Brave:** download `undelucram-unlocked.zip` and unzip it to a **permanent location**. Then open `chrome://extensions` → Developer mode  → **Load unpacked**.
+          - Found a broken page? [Open an issue](https://github.com/DynoW/undelucram-unlocked/issues).
+          EOF
+          )
+          gh api "repos/${{ github.repository }}/releases" \
+            -f tag_name="v$VERSION" \
+            -f target_commitish="$GITHUB_SHA" \
+            -f name="Undelucram Unlocked $VERSION" \
+            -F generate_release_notes=true \
+            -f body="$body" \
+            --jq .html_url
+          gh release upload "v$VERSION" "$ZIP_ASSET" "$XPI_ASSET"
 
       - name: Update updates.json on main
         run: |

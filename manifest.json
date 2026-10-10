@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Undelucram Unlocked",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Browser extension to unlock blurred salaries and company reviews on undelucram.ro.",
   "permissions": ["declarativeNetRequest"],
   "host_permissions": ["*://*.undelucram.ro/*"],
@@ -24,7 +24,10 @@
     "gecko": {
       "id": "undelucram-unlocked@dynow.github.io",
       "strict_min_version": "113.0",
-      "update_url": "https://dynow.github.io/undelucram-unlocked/updates.json"
+      "update_url": "https://dynow.github.io/undelucram-unlocked/updates.json",
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
     }
   }
 }

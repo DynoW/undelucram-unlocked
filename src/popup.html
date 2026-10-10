@@ -37,8 +37,15 @@
       .wrap {
         padding: 14px 16px 16px;
       }
+      .head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+        margin-bottom: 12px;
+      }
       h1 {
-        margin: 0 0 12px;
+        margin: 0;
         font-size: 15px;
         display: flex;
         align-items: center;
@@ -48,37 +55,6 @@
         width: 20px;
         height: 20px;
         border-radius: 5px;
-      }
-      .row {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 10px;
-        padding: 10px 0;
-        border-top: 1px solid var(--border);
-      }
-      .row:first-of-type {
-        border-top: 0;
-      }
-      .label {
-        font-weight: 600;
-      }
-      .hint {
-        color: var(--muted);
-        font-size: 12px;
-      }
-      input[type="text"] {
-        width: 100%;
-        margin-top: 6px;
-        padding: 7px 9px;
-        border: 1px solid var(--border);
-        border-radius: 7px;
-        background: var(--field);
-        color: var(--fg);
-        font: inherit;
-      }
-      input[type="text"][readonly] {
-        color: var(--muted);
       }
       .switch {
         position: relative;
@@ -159,25 +135,13 @@
   </head>
   <body>
     <div class="wrap">
-      <h1><img src="../icons/32.png" alt="" /> Undelucram Unlocked</h1>
-
-      <div class="row">
-        <div>
-          <div class="label">Enable</div>
-          <div class="hint">Unlock gated pages</div>
-        </div>
+      <header class="head">
+        <h1><img src="../icons/32.png" alt="" /> Undelucram Unlocked</h1>
         <label class="switch">
           <input id="toggle" type="checkbox" role="switch" aria-label="Enable Undelucram Unlocked" />
           <span class="slider"></span>
         </label>
-      </div>
-
-      <div class="row">
-        <div style="width: 100%">
-          <div class="label">Referer sent</div>
-          <input id="referer" type="text" readonly />
-        </div>
-      </div>
+      </header>
 
       <div id="status" class="status">
         <span class="dot"></span>

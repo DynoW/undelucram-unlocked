@@ -3,17 +3,14 @@
 const api = globalThis.browser ?? globalThis.chrome;
 
 const RULESET_ID = "referer";
-const REFERER = "https://www.google.com/";
 const TARGET_HOST = "undelucram.ro";
 const ISSUES_URL = "https://github.com/DynoW/undelucram-unlocked/issues";
 
 const toggle = document.getElementById("toggle");
-const refererField = document.getElementById("referer");
 const status = document.getElementById("status");
 const statusText = document.getElementById("statusText");
 const report = document.getElementById("report");
 
-refererField.value = REFERER;
 report.href = ISSUES_URL;
 
 function isTargetUrl(url) {
