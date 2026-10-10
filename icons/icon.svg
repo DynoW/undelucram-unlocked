@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" fill="none">
+  <!-- Rounded Background Tile -->
+  <rect width="128" height="128" rx="28" fill="#0F172A"/>
+  
+  <!-- Shackle (Unlocked Position) -->
+  <path d="M44 60V42C44 30.9543 52.9543 22 64 22C75.0457 22 84 30.9543 84 42V48" 
+        stroke="#38BDF8" 
+        stroke-width="9" 
+        stroke-linecap="round"/>
+
+  <!-- Lock Body -->
+  <rect x="34" y="60" width="60" height="46" rx="10" fill="#2563EB"/>
+  
+  <!-- Center Arrow / Route Injector Emblem -->
+  <path d="M54 83H74M74 83L66 75M74 83L66 91" 
+        stroke="#FFFFFF" 
+        stroke-width="5" 
+        stroke-linecap="round" 
+        stroke-linejoin="round"/>
+</svg>
