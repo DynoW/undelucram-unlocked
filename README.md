@@ -52,6 +52,8 @@ Nu îți cere cont, nu trimite date nicăieri și nu conține reclame.
   conținutul în mod oficial.
 - Extensia nu este făcută de `undelucram.ro` și nu are nicio legătură cu acest
   site.
+- Pe Firefox, extensia se actualizează automat. Pe Chrome, actualizarea se face
+  manual — descarcă din nou fișierul din pagina de descărcare.
 
 ## Licență
 

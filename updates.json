@@ -1,0 +1,12 @@
+{
+  "addons": {
+    "undelucram-unlocked@dynow.github.io": {
+      "updates": [
+        {
+          "version": "0.1.0",
+          "update_link": "https://github.com/DynoW/undelucram-unlocked/releases/latest/download/undelucram-unlocked.xpi"
+        }
+      ]
+    }
+  }
+}

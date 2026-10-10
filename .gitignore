@@ -1,0 +1,7 @@
+stage/
+artifacts/
+web-ext-artifacts/
+undelucram-unlocked.zip
+undelucram-unlocked.xpi
+*.crx
+*.pem

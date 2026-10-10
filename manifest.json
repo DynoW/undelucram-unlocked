@@ -22,8 +22,9 @@
   },
   "browser_specific_settings": {
     "gecko": {
-      "id": "undelucram-unlocked@dynov.github.io",
-      "strict_min_version": "113.0"
+      "id": "undelucram-unlocked@dynow.github.io",
+      "strict_min_version": "113.0",
+      "update_url": "https://dynow.github.io/undelucram-unlocked/updates.json"
     }
   }
 }

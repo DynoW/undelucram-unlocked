@@ -109,11 +109,12 @@ Verified behavior against a real gated page:
 ## Project layout
 
 ```
-manifest.json      # MV3, cross-browser
+manifest.json      # MV3, cross-browser (includes gecko update_url)
 rules/referer.json # DNR static ruleset
 src/popup.html     # popup UI
 src/popup.js       # enable/disable the ruleset
 icons/             # 16/32/48/128 png + svg
+updates.json       # Firefox update manifest (served via GitHub Pages)
 ```
 
 ## Development
