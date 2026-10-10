@@ -2,14 +2,14 @@
 
 > [🇷🇴 Citește în Română](README.md)
 
-A tiny cross-browser (Chrome + Firefox, Manifest V3) extension that lets you read
-**gated** company review pages on `undelucram.ro`.
+**Browser extension to unlock blurred salaries and company reviews on
+`undelucram.ro`, for Chrome and Firefox (Manifest V3).**
 
-The site gates full reviews behind a "contribute a review to view everything"
-wall. That wall is enforced **server-side, keyed on the `Referer` request
-header**: when the request looks like it came from a search engine, the full page
-is returned. This extension rewrites the outgoing `Referer` to a search-engine
-URL, so the page loads ungated.
+Full reviews sit behind a "contribute a review to view everything" wall. That
+wall is enforced **server-side, keyed on the `Referer` request header**: when the
+request looks like it came from a search engine, the full page is returned. This
+extension rewrites the outgoing `Referer` to a search-engine URL, so the page
+loads ungated.
 
 No account, no analytics, no remote calls, no content scripts.
 

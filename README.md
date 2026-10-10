@@ -2,11 +2,11 @@
 
 > [🇬🇧 Read in English](README.en.md) (more detailed)
 
-O extensie pentru Chrome și Firefox care îți arată recenziile complete de pe
-`undelucram.ro` fără să fii nevoit să scrii tu o recenzie.
+**Extensie de browser care deblochează salariile și recenziile blocate de pe
+`undelucram.ro`, pentru Chrome și Firefox.**
 
-Pe `undelucram.ro`, recenziile complete sunt ascunse până când contribui cu o
-recenzie. Această extensie ocolește acel mesaj și îți afișează toate recenziile.
+Recenziile complete sunt ascunse până când contribui cu o recenzie. Extensia
+ocolește acel mesaj și îți arată tot conținutul.
 
 Nu îți cere cont, nu trimite date nicăieri și nu conține reclame.
 
